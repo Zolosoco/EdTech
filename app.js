@@ -5,13 +5,14 @@ const port = process.env.PORT || 9001;
 const mongoose = require('mongoose');
 const URL = process.env.MONGO_URL;
 const {userRouter} = require('./routes/userRouter');
+const {adminRouter} = require('./routes/adminRouter');
 
 app.use(express.json());
 main();
 
 
 app.use('/user',userRouter);
-// app.use('/admin', adminRouter);
+app.use('/admin', adminRouter);
 // app.use('/course',courseRouter);
 
 

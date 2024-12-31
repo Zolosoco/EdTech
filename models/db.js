@@ -35,7 +35,11 @@ const Course = new Schema({
     title : String,
     description : String,
     price : Number,
-    imageUrl : String
+    imageUrl : String,
+    courseCreatedBy : [{
+        type: ObjectId,
+        ref : 'Admin'
+    }]
 });
 
 
